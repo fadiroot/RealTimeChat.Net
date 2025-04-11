@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>starter_dotnet</RootNamespace>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="EntityFramework" Version="6.5.1" />
+        <PackageReference Include="EntityFramework6.Npgsql" Version="6.4.3" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.3">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql" Version="9.0.3" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Database\Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Chat\bin\Debug\net9.0\Chat.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="Chat\bin\Debug\net9.0\Chat.staticwebassets.runtime.json" />
+      <_ContentIncludedByDefault Remove="Chat\bin\Debug\net9.0\wwwroot\_framework\blazor.boot.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Chat.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\blazor.boot.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\blazor.build.boot-extension.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\Chat.sourcelink.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\staticwebassets.build.endpoints.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\staticwebassets.build.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\staticwebassets.development.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\Debug\net9.0\staticwebassets.pack.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="Chat\obj\project.packagespec.json" />
+      <_ContentIncludedByDefault Remove="Chat\Properties\launchSettings.json" />
+      <_ContentIncludedByDefault Remove="Chat\wwwroot\sample-data\weather.json" />
+      <_ContentIncludedByDefault Remove="Chat\App.razor" />
+      <_ContentIncludedByDefault Remove="Chat\Layout\MainLayout.razor" />
+      <_ContentIncludedByDefault Remove="Chat\Layout\NavMenu.razor" />
+      <_ContentIncludedByDefault Remove="Chat\Pages\Counter.razor" />
+      <_ContentIncludedByDefault Remove="Chat\Pages\Home.razor" />
+      <_ContentIncludedByDefault Remove="Chat\Pages\Weather.razor" />
+      <_ContentIncludedByDefault Remove="Chat\_Imports.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Chat\App.razor" />
+      <UpToDateCheckInput Remove="Chat\Layout\MainLayout.razor" />
+      <UpToDateCheckInput Remove="Chat\Layout\NavMenu.razor" />
+      <UpToDateCheckInput Remove="Chat\Pages\Counter.razor" />
+      <UpToDateCheckInput Remove="Chat\Pages\Home.razor" />
+      <UpToDateCheckInput Remove="Chat\Pages\Weather.razor" />
+      <UpToDateCheckInput Remove="Chat\_Imports.razor" />
+    </ItemGroup>
+
+</Project>
