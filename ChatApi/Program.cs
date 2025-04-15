@@ -20,7 +20,9 @@ builder.Services.AddSwaggerGen(options =>
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
         Description = "Enter 'Bearer' [space] and then your valid token.\nExample: Bearer abcdef12345"
     });
+    
 
+    
     options.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
     {
         {
@@ -44,7 +46,21 @@ builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
 var connectionString = builder.Configuration.GetConnectionString("PgConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseNpgsql(connectionString)); 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazorApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:5084")
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowAnyHeader();
+
+    });
+}); 
+
 var app = builder.Build();
+
+
 
 
 // Configure the HTTP request pipeline.
@@ -54,6 +70,8 @@ if (app.Environment.IsDevelopment())
  
     
 }
+
+app.UseCors("AllowBlazorApp");
 app.UseSwagger();
 app.UseSwaggerUI();
 app.MapIdentityApi<IdentityUser>();

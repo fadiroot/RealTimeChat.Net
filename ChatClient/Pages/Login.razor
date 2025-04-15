@@ -1,0 +1,52 @@
+@page "/Login"
+@using ChatClient.Models
+@using System.ComponentModel.DataAnnotations
+@using ChatClient.Services
+@inject AuthService AuthService
+
+<h3 class="text-center mb-4">Create New Account</h3>
+
+<EditForm Model="@registerModel" OnValidSubmit="HandleRegistration" class="auth-form">
+    <DataAnnotationsValidator />
+    <ValidationSummary class="text-danger" />
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <InputText id="email" @bind-Value="registerModel.Email" class="form-control" />
+        <ValidationMessage For="@(() => registerModel.Email)" class="text-danger" />
+    </div>
+    
+    
+    <div class="form-group">
+        <label for="password">Password</label>
+        <InputText id="password" @bind-Value="registerModel.Password" type="password" class="form-control" />
+        <ValidationMessage For="@(() => registerModel.Password)" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <InputText id="confirmPassword" @bind-Value="registerModel.ConfirmPassword" type="password" class="form-control" />
+        <ValidationMessage For="@(() => registerModel.ConfirmPassword)" class="text-danger" />
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+    <div class="text-center mt-3">
+        <a href="/login">Already have an account? Sign In</a>
+    </div>
+</EditForm>
+
+@code {
+    private RegisterModel registerModel = new RegisterModel();
+
+    private async Task HandleRegistration()
+    {
+        await AuthService.Register(registerModel); 
+        
+        
+        // Call your AuthService here
+
+
+        // Example: await authService.Register(registerModel.Email, registerModel.Password);
+    }
+}

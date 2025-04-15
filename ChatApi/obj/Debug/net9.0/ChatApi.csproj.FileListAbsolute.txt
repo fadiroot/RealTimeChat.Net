@@ -156,3 +156,4 @@
 /Users/takiacademy/Desktop/ChatApp/ChatApi/bin/Debug/net9.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 /Users/takiacademy/Desktop/ChatApp/ChatApi/bin/Debug/net9.0/Microsoft.Extensions.Identity.Core.dll
 /Users/takiacademy/Desktop/ChatApp/ChatApi/bin/Debug/net9.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/takiacademy/Desktop/ChatApp/ChatApi/obj/Debug/net9.0/ChatApi.sourcelink.json
